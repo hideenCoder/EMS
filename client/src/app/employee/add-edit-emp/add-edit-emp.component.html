@@ -1,0 +1,35 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+    <div class="form-froup row" style="width: 100%;">
+
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th>User Name:</th>
+                    <td>{{emp.UserName}}</td>
+                </tr>
+                <tr>
+                    <th>Email Id:</th>
+                    <td>{{emp.Email}}</td>
+                </tr>
+                <tr>
+                    <th>Contact No:</th>
+                    <td>{{emp.Contact}}</td>
+                </tr>
+                <tr>
+                    <th>Department:</th>
+                    <td>{{emp.Department}}</td>
+                </tr>
+                <tr>
+                    <th>Date Of Joining:</th>
+                    <td>{{emp.DateOfJoining}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="ml-3 bd-highlight d-flex flex-column align-items-center" style="width: 100%;">
+        <img [src]=PhotoFilePath height="250px;" width="200px;">
+        <h5 class="mt-2">{{emp.Name}}</h5>
+    </div>
+</div>

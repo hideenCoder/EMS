@@ -1,0 +1,193 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <div class="sb-sidenav-menu-heading">Core</div>
+                    <a class="nav-link" routerLink="/admin">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Dashboard
+                    </a>
+                    <div class="sb-sidenav-menu-heading">Interface</div>
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
+                        aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Create
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                        data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" routerLink="/createdepartment">Department</a>
+                            <a class="nav-link" routerLink="/createemployee">Employee</a>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#maillayout"
+                        aria-expanded="false" aria-controls="maillayout">
+                        <div class="sb-nav-link-icon"><i class="far fa-envelope"></i></div>
+                        Check Mails
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="maillayout" aria-labelledby="headingOne"
+                        data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" routerLink="/sentmail">Sent Mails</a>
+                            <a class="nav-link" routerLink="/recievedmail">Recieved Mails</a>
+                        </nav>
+                    </div>
+                    <a class="nav-link" routerLink="/updateabout">
+                        <div class="sb-nav-link-icon"><i class="far fa-address-card"></i></div>
+                        About
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Create EmployeeList</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a routerLink="/admin">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Create Employee</li>
+                </ol>
+                <div class="card mb-4">
+                    <div class="card-body bg-light">
+                        <!-- <p class="mb-0">
+                            Here Show the create EmployeeList Form
+                            
+                        </p> -->
+                        <div class="signup-form ">
+                            <div class="">
+                                <h2>Create Now</h2>
+                                <p>Please fill in this form to create an Employee</p>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <span class="fa fa-user"></span>
+                                            </span>
+                                        </div>
+                                        <input [(ngModel)]="UserName" type="text" class="form-control" name="Username"
+                                            placeholder="Username" required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-lock"></i>
+                                            </span>
+                                        </div>
+                                        <input type="password" class="form-control" name="Password"
+                                            placeholder="Password" required="required" [(ngModel)]="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <span class="fa fa-user"></span>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" name="Name" placeholder="Employee Name"
+                                            required="required" [(ngModel)]="EmployeeName">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-envelope-open"></i>
+                                            </span>
+                                        </div>
+                                        <input type="email" class="form-control" name="Email"
+                                            placeholder="Email Address" required="required" [(ngModel)]="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa  fa-phone-square"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" name="Contact" placeholder="Contact No"
+                                            required="required" [(ngModel)]="Contact">
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <div class="w-100">
+                                        <div class="form-group">
+                                            <label>Department</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="fa fa-building"></i>
+
+                                                    </span>
+                                                </div>
+                                                <select class="form-select" aria-label="" required="required"
+                                                    [(ngModel)]="Department">
+                                                    <option selected>Chosse the Department</option>
+                                                    <option *ngFor="let depName of DepartmentsList">
+                                                        {{depName.DepartmentName}}
+                                                    </option>
+
+                                                </select>
+                                                <!-- <input type="text" class="form-control" name="Department" placeholder="Department" required="required"> -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Upload Employee Image</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="fa fa-upload"></i>
+
+                                                    </span>
+                                                </div>
+
+                                                <input type="file" class="form-control" name="PhotoFileName"
+                                                    required="required" (change)="uploadPhoto($event)">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Date of Joining</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                </div>
+                                                <input type="date" class="form-control" name="DateOfJoining"
+                                                    placeholder="Date of Joining" required="required"
+                                                    [(ngModel)]="DateOfJoining">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="imageContainer w-100 d-flex align-items-center justify-content-center">
+                                        <img [src]=PhotoFilePath height="250px;" width="200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="button" (click)="addEmployee()"
+                                        class="btn btn-primary">Create</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <!-- <div style="height: 100vh"></div> -->
+
+            </div>
+        </main>
+    </div>
+</div>

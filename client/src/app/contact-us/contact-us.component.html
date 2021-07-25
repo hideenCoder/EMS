@@ -1,0 +1,71 @@
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="contact-wrap w-100 p-md-5 p-4">
+                                <div id="contactForm" name="contactForm" class="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input [(ngModel)]="Name" type="text" class="form-control" name="name"
+                                                    id="name" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input [(ngModel)]="Email" type="email" class="form-control"
+                                                    name="email" id="email" placeholder="Email">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <textarea [(ngModel)]="Message" name="message" class="form-control"
+                                                    id="message" cols="30" rows="4"
+                                                    placeholder="Write here...."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="button" value="Send Message" (click)="onSubmit()" class="btn btn-primary">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100 social-media mt-5">
+                                    <h4 style="font-family: 'Times New Roman', Times, serif;">Find Us on Social Media
+                                    </h4>
+                                    <p>
+                                        <a
+                                            href="https://en-gb.facebook.com/hiddencoder1/?hc_ref=ARRKzVb747CdW1-qNfaTzSNP2iZzCGtrqpOka--EUEUbyH_wAbUv7BgI1LUY7o-_OeU&ref=nf_target&__tn__=kC-R"><i
+                                                style="font-size: 40px; color: var(--primary);"
+                                                class="fab fa-facebook"></i></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="mailto:hiddencoder1@gmail.com"><i
+                                                style="font-size: 40px; color: var(--primary);"
+                                                class="fas fa-envelope"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="https://github.com/orgs/hideenCoder/dashboard"><i
+                                                style="font-size: 40px; color: var(--primary);"
+                                                class="fab fa-github"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="https://instagram.com/hiddencoder88?utm_medium=copy_link"><i
+                                                style="font-size: 40px; color: var(--primary);"
+                                                class="fab fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-stretch">
+                            <div class="info-wrap w-100 p-5 img">
+                                <img src="../../assets/images/contact.jpg" style="width: 80%; margin-top: 50px;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark" style="background-color: #495056 !important;">
+    <div class="container">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" routerLink="/">EMS - Hidden Coder</a>
+        <!-- Navbar Search-->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a *ngIf="!currentUser" class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+              <a *ngIf="currentUser" class="nav-link" routerLink="/employee">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/aboutus">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/contactus">Contact Us</a>
+            </li>
+          </ul>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 d-flex align-items-center justify-content-center">
+            <li class="nav-item dropdown dropleft">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown"
+                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li *ngIf="!currentUser"><a class="dropdown-item" routerLink="/login">Login</a></li>
+                    <li *ngIf="currentUser" style="cursor: pointer;"><a class="dropdown-item" (click)="logoutClick()">Logout</a></li>
+                </ul>
+            </li>
+
+            <li *ngIf="currentUser" class="nav-item nav-link">{{currentUser.Name}}</li>
+
+        </ul>
+    </div>
+</nav>

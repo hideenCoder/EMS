@@ -1,0 +1,61 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+    <div class="form-froup d-flex flex-column" style="width: 100%;">
+        <div class="d-flex flex-column">
+            <label class="form-label mt-3">Employee Id</label>
+            <div class="">
+                <input type="number" class="form-control" [(ngModel)]="EmployeeId" placeholder="Enter Employee Id" readonly>
+            </div>
+        </div>
+        <div class="d-flex flex-column">
+            <label class="form-label mt-3">User Name</label>
+            <div class="">
+                <input type="text" class="form-control" [(ngModel)]="UserName" placeholder="Enter User Name" readonly>
+            </div>
+        </div>
+        <div class="d-flex flex-column">
+            <label class="form-label mt-3">Employee Name</label>
+            <div class="">
+                <input type="text" class="form-control" [(ngModel)]="EmployeeName" placeholder="Enter Employee Name">
+            </div>
+        </div>
+        <div class="d-flex flex-column">
+            <label class="form-label mt-3">Email Id</label>
+            <div class="">
+                <input type="email" class="form-control" [(ngModel)]="Email" placeholder="Enter Email Id">
+            </div>
+        </div>
+        <div class="d-flex flex-column">
+            <label class="form-label mt-3">Contact No</label>
+            <div class="">
+                <input type="text" class="form-control" [(ngModel)]="Contact" placeholder="Enter Contact No">
+            </div>
+        </div>
+        <div class="d-flex flex-column">
+            <label class="form-label mt-3">Department</label>
+            <div class="">
+                <select class="form-control" [(ngModel)]="Department">
+                    <option>--Select--</option>
+                    <option *ngFor="let depName of DepartmentsList">
+                        {{depName.DepartmentName}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="d-flex flex-column">
+            <label class="form-label mt-3">Date of joining</label>
+            <div class="">
+                <input type="date" [(ngModel)]="DateOfJoining">
+            </div>
+        </div>
+
+    </div>
+    <div class="ml-3 bd-highlight d-flex flex-column align-items-center" style="width: 100%;">
+        <img [src]=PhotoFilePath height="250px;" width="200px;">
+        <input style="margin-left: 6rem;" type="file" (change)="uploadPhoto($event)" class="mt-2" />
+    </div>
+</div>
+
+<button (click)="updateEmployee()" class="btn btn-primary">
+    Update
+</button>

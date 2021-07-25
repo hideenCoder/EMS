@@ -1,0 +1,65 @@
+<div class="main">
+    <!-- Sing in  Form -->
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="../../assets/images/signup.png" alt="sing up image"></figure>
+                    <a href="signup.html" class="signup-image-link">Create an account</a>
+                </div>
+
+                <div class="signin-form">
+                    <h2 class="form-title">Login</h2>
+                    <form id="login-form" #userForm="ngForm" (ngSubmit)="onsubmit()" novalidate>
+                        <!-- {{userForm.value | json}}
+                            <hr/>
+                            {{userModel | json}} -->
+
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" required #name="ngModel" name="name" id="your_name"
+                                placeholder="User Name" [class.is-invalid]="name.invalid && name.touched"
+                                class="form-control" [(ngModel)]="UserName" />
+                            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Username is
+                                required</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" required #password="ngModel" name="password" id="your_pass"
+                                placeholder="Password" [class.is-invalid]="password.invalid && password.touched"
+                                class="form-control" [(ngModel)]="Password" />
+                            <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is
+                                required</small>
+                        </div>
+                        <div class="form-group" style="font-size: 15px;">
+                            By login to your account you agree to our <a routerLink="/terms">Terms & Conditions</a>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                        </div>
+                    </form>
+                    <div class="social-login">
+                        <span class="social-label">Or login with</span>
+                        <ul class="socials">
+                            <li><a href="#">
+                                    <i style="font-size: 40px; color: #222;" class="fab fa-github"></i>
+                                </a>
+                            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <li><a href="https://instagram.com/hiddencoder88?utm_medium=copy_link">
+                                    <i style="font-size: 40px; color: #222;" class="fab fa-instagram"></i>
+                                </a>
+                            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <li><a
+                                    href="https://en-gb.facebook.com/hiddencoder1/?hc_ref=ARRKzVb747CdW1-qNfaTzSNP2iZzCGtrqpOka--EUEUbyH_wAbUv7BgI1LUY7o-_OeU&ref=nf_target&__tn__=kC-R">
+                                    <i style="font-size: 40px; color: #222;" class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
